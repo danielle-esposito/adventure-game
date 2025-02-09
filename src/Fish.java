@@ -1,5 +1,3 @@
-package adventure_game_2;
-
 public class Fish {
 	public String fish_name;
 	public int bell_value;
