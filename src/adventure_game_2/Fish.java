@@ -12,11 +12,11 @@ public class Fish {
 		this.bell_value = Integer.parseInt(fish_values[1]);
 		this.size = Integer.parseInt(fish_values[2]);
 		this.capture_quote = fish_values[3];
-		this.ascii_art = fish_values[4];
+		this.ascii_art = fish_values[4].replace("\\n", "\n"); // Fix newlines
 		
 	}
 	public void printDetails() {
-		//System.out.println(this.ascii_art);
+		System.out.println(this.ascii_art);
 		System.out.println(this.fish_name + " " + this.bell_value + " " + this.size + " " + this.capture_quote);
 	}
 }
