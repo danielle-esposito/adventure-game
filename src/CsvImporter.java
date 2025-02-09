@@ -21,8 +21,8 @@ public class CsvImporter {
 			
 			if (csvFile == "resources/fish.csv") {
 				Fish fish = new Fish(values);
-				List.add(fish);}
-			// } else if (csvFile == "resources/bug.csv") {
+				List.add(fish);
+			} //else if (csvFile == "resources/bug.csv") {
 			// 	Bug bug = new Bug(values);
 			// }
 
