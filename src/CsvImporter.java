@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class CsvImporter {
 
-	public static List<Fish> importFish(String csvFile) throws IOException {
+	public static List<Fish> importCSV(String csvFile) throws IOException {
 		
-		List<Fish> fishList = new ArrayList<>();
+		List<Fish> List = new ArrayList<>();
 		
 		BufferedReader br = new BufferedReader(new FileReader(csvFile));
 		String line;
@@ -19,14 +19,19 @@ public class CsvImporter {
 		while ((line = br.readLine()) != null) {
 			values = line.split(",");
 			
-			Fish fish = new Fish(values);
-			fishList.add(fish);
+			if (csvFile == "resources/fish.csv") {
+				Fish fish = new Fish(values);
+				List.add(fish);}
+			// } else if (csvFile == "resources/bug.csv") {
+			// 	Bug bug = new Bug(values);
+			// }
+
 			
 			System.out.println();
 		}
 		br.close();
 		
-		return fishList;
+		return List;
 	}
 
 }
