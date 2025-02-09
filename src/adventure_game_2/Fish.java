@@ -16,7 +16,7 @@ public class Fish {
 		
 	}
 	public void printDetails() {
-		System.out.println(this.ascii_art);
-		System.out.println("name: " + this.fish_name + " bell: " + this.bell_value + " size: " + this.size + " capture quote: " + this.capture_quote);
+		//System.out.println(this.ascii_art);
+		System.out.println(this.fish_name + " " + this.bell_value + " " + this.size + " " + this.capture_quote);
 	}
 }
