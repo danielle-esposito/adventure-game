@@ -26,7 +26,7 @@ public class CsvImporter {
 		return list;
 	}
 
-	public static ArrayList<Bug> ImportBug(String csvFile, ArrayList<Bug> list) throws IOException{
+	public static ArrayList<Bug> ImportBugs(String csvFile, ArrayList<Bug> list) throws IOException{
 		//List<Bug> list = new ArrayList<>();
 		
 		BufferedReader br = new BufferedReader(new FileReader(csvFile));

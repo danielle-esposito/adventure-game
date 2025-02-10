@@ -8,6 +8,8 @@ public class Fruit {
 	public Fruit(String[] fruit_values) {
 		this.fruit_name = fruit_values[0];
 		this.bell_value = Integer.parseInt(fruit_values[1]);
+		this.fruit_name = fruit_values[0];
+		this.bell_value = Integer.parseInt(fruit_values[1]);
 		this.capture_quote = fruit_values[2];
         this.ascii_art = fruit_values[3].replace("\\n", "\n"); // Fix newlines
 
