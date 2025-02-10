@@ -11,7 +11,8 @@ public class Main {
 		fishList = CsvImporter.ImportFish("resources/fish.csv",fishList); // sets newly created fishList equal to output from the fish csv file
 		//ArrayList<Bug> bugList = new ArrayList<>();
 		//bugList = CsvImporter.ImportBugs("resources/bug.csv",bugList);
-
+		ArrayList<Fruit> fruitList = new ArrayList<>();
+		fruitList = CsvImporter.ImportFruit("resources/fruit.csv",fruitList);
 
 		//Print details for all of the Items (Debug)
 		//for (Fish fish : fishList) {
@@ -20,6 +21,9 @@ public class Main {
 		//for (Bug bug : bugList) {
 		//	bug.printDetails();
 		//}
+		// for (Fruit fruit: fruitList) {
+		// 	fruit.printDetails();
+		// }
 
 		Intro();
 
@@ -28,18 +32,7 @@ public class Main {
 		while(winCondition == false){
 			Menu();
 		}
-
-
-		//adding fruit to main for testing, basically copying the same as fish
-		ArrayList<Fruit> fruitList = new ArrayList<>();
-		fruitList = CsvImporter.ImportFruit("resources/fruit.csv",fruitList);
-
-		for (Fruit fruit: fruitList) {
-			fruit.printDetails();
-		}
 	}
-
-
 
 	public static void Intro(){
 		Scanner input = new Scanner(System.in);
