@@ -5,8 +5,8 @@ public class Fruit extends Item{
 	}
 
 public static void Game(String[] args) {
-   System.out.println("Welcome to the Fruit Picking Game!");
-   System.out.println("Here your task is to plant and then shake the trees and pick the fruit. This will be the fruit that you will then sell to the Shop to earn some more bells to pay off your debt!");
+   IterativePrint.printString("Welcome to the Fruit Picking Game!");
+   IterativePrint.printString("Here your task is to plant and then shake the trees and pick the fruit. This will be the fruit that you will then sell to the Shop to earn some more bells to pay off your debt!");
    
    plantTree();
    shakeTree();
@@ -23,7 +23,7 @@ public static void Game(String[] args) {
             }
             System.out.print(".");
         }
-        System.out.println("\nThe tree has fully grown!");
+        IterativePrint.printString("\nThe tree has fully grown!");
     }
 
     public static void shakeTree() {
@@ -38,6 +38,6 @@ public static void Game(String[] args) {
             String padding = " ".repeat(i % 5);
             System.out.println(padding + shakeText);
         }
-        System.out.println("The fruit has fallen!");
+        IterativePrint.printString("The fruit has fallen!");
     }
 }
