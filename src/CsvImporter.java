@@ -27,7 +27,7 @@ public class CsvImporter {
 			// }
 
 			
-			System.out.println();
+			//System.out.println(); // Not sure why this was here?
 		}
 		br.close();
 		
