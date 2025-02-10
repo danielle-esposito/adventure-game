@@ -11,10 +11,19 @@ public class Main {
 		ArrayList<Fish> fishList = new ArrayList<>(); //creates empty new list to store values of all fish objects
 		fishList = CsvImporter.ImportFish("resources/fish.csv",fishList); // sets newly created fishList equal to output from the fish csv file
 
+		//ArrayList<Bug> bugList = new ArrayList<>();
+		//bugList = CsvImporter.ImportBugs("resources/bug.csv",bugList);
 
-		for (Fish fish: fishList) {
+
+		//Print details for all of the Items (Debug)
+		for (Fish fish : fishList) {
 			fish.printDetails();
 		}
+		//for (Bug bug : bugList) {
+		//	bug.printDetails();
+		//}
+
+
 	}
 
 
