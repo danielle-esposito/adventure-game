@@ -39,12 +39,10 @@ public class Main {
 
 		IterativePrint.printString("Into back and forth narative to be written here");
 		IterativePrint.printString("Nice to meet you! What's your name? ");
-
 		String name = input.nextLine();
-		//Character player = new Character(name);
-		//Character defualt constuctor needs to be in here when prompted for name
-
+		Character player = new Character(name);
 		input.close();
+		System.out.println(player.debt);
 	}
 
 	public static void Menu(){
