@@ -23,7 +23,7 @@ public static void Game(String[] args) {
    }
     
     public static void plantTree() {
-        System.out.print("Planting a tree");
+        System.out.print("First, you need to plant a tree...");
         for (int i = 0; i < 10; i++) { // 5 seconds total
             try {
                 Thread.sleep(500);
