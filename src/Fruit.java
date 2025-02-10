@@ -5,8 +5,8 @@ public class Fruit {
 	
 	
 	public Fruit(String[] fruit_values) {
-		this.fruit_name = fruit_values[0]
-		this.bell_value = integer.parseint(fruit_values[1]);
+		this.fruit_name = fruit_values[0];
+		this.bell_value = Integer.parseInt(fruit_values[1]);
 		this.capture_quote = fruit_values[2];
 			
 	}
@@ -48,7 +48,6 @@ public static void Game(String[] args) {
             System.out.println(padding + shakeText);
         }
         System.out.println("The fruit has fallen!");
-        System.out.println(printDetails()); 
- 
+        // Need to add random fruit picker and display fruit
     }
 }
