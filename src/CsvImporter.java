@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class CsvImporter {
 
-	public static List<Fish> importCSV(String csvFile) throws IOException {
+	public static ArrayList<Fish> ImportFish(String csvFile, ArrayList<Fish> list) throws IOException {
 		
-		List<Fish> List = new ArrayList<>();
+		//List<Fish> list = new ArrayList<>();
 		
 		BufferedReader br = new BufferedReader(new FileReader(csvFile));
 		String line;
@@ -18,20 +18,30 @@ public class CsvImporter {
 		
 		while ((line = br.readLine()) != null) {
 			values = line.split(",");
-			
-			if (csvFile == "resources/fish.csv") {
-				Fish fish = new Fish(values);
-				List.add(fish);
-			} //else if (csvFile == "resources/bug.csv") {
-			// 	Bug bug = new Bug(values);
-			// }
-
-			
-			//System.out.println(); // Not sure why this was here?
+			Fish item = new Fish(values);
+			list.add(item);
 		}
 		br.close();
 		
-		return List;
+		return list;
 	}
 
+	public static ArrayList<Bug> ImportFruit(String csvFile, ArrayList<Bug> list) throws IOException{
+		//List<Bug> list = new ArrayList<>();
+		
+		BufferedReader br = new BufferedReader(new FileReader(csvFile));
+		String line;
+		
+		String[] values;
+		values = new String[5];
+		
+		while ((line = br.readLine()) != null) {
+			values = line.split(",");
+			Bug item = new Bug(values);
+			list.add(item);
+		}
+		br.close();
+		
+		return list;
+	}
 }
