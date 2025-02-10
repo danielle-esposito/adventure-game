@@ -18,8 +18,8 @@ public class Main {
 
 
 	public static void Intro(){
-		System.out.println("Intro back and forth Narative to be added");
-
+		IterativePrint.printString("Into back and forth narative to be written here");
+		System.out.println();
 	}
 
 }
