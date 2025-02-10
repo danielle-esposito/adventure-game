@@ -8,5 +8,6 @@ public class IterativePrint {
                 e.printStackTrace();
             }
         }
+        System.out.println();
     }
 }

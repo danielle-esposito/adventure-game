@@ -16,9 +16,9 @@ public class Main {
 
 
 		//Print details for all of the Items (Debug)
-		for (Fish fish : fishList) {
-			fish.printDetails();
-		}
+		//for (Fish fish : fishList) {
+		//	fish.printDetails();
+		//}
 		//for (Bug bug : bugList) {
 		//	bug.printDetails();
 		//}
@@ -28,7 +28,7 @@ public class Main {
 		boolean winCondition = false;
 
 		while(winCondition == false){
-			
+			Menu();
 		}
 
 	}
@@ -41,7 +41,7 @@ public class Main {
 		IterativePrint.printString("Into back and forth narative to be written here");
 		IterativePrint.printString("Nice to meet you! What's your name? ");
 
-		//String name = input.nextLine();
+		String name = input.nextLine();
 		//Character player = new Character(name);
 		//Character defualt constuctor needs to be in here when prompted for name
 
@@ -49,6 +49,11 @@ public class Main {
 	}
 
 	public static void Menu(){
+		IterativePrint.printString("You got some debt to pay off, here's what you can do!");
+		IterativePrint.printString("Current debt: ");
+		IterativePrint.printString("Fish Inventory: ");
+		IterativePrint.printString("Fruit Inventory: ");
+		IterativePrint.printString("Bug Inventory: ");
 
 	}
 
