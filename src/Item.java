@@ -13,8 +13,12 @@ public class Item {
 		this.ascii_art = values[4].replace("\\n", "\n"); // Fix newlines
 		
 	}
-	public void printDetails() {
+	public void printCapture() {
 		System.out.println(this.ascii_art);
-		System.out.println(this.name + " " + this.bell_value + " " + this.size + " " + this.capture_quote);
+		IterativePrint.printString(this.capture_quote);
+	}
+
+	public void printDetails() {
+		IterativePrint.printString(this.name + " Size: " + this.size + " Value: " + " Bells");
 	}
 }
