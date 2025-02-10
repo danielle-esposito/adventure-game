@@ -50,9 +50,7 @@ public class Main {
 	public static void Menu(){
 		IterativePrint.printString("You got some debt to pay off, here's what you can do!");
 		IterativePrint.printString("Current debt: ");
-		IterativePrint.printString("Fish Inventory: ");
-		IterativePrint.printString("Fruit Inventory: ");
-		IterativePrint.printString("Bug Inventory: ");
+		//player.printInventory();
 
 	}
 
