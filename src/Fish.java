@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Fish extends Item {
@@ -9,10 +10,11 @@ public class Fish extends Item {
 
     public static void Game(ArrayList<Fish> fishList, Character player) throws InterruptedException {
         IterativePrint.clearScreen();
+        animateRiver.main();
         IterativePrint.printString("Welcome to the river!", true);
         IterativePrint.printString("There are plenty of fish to catch!", true);
 
-        animateBobber();
+        //animateRiver();
 
     }
 
@@ -26,7 +28,11 @@ public class Fish extends Item {
         for (int i = 0; i < 10; i++) {
             IterativePrint.clearScreen();
             System.out.println(frames[i % frames.length]);
-            Thread.sleep(500); // 500ms delay
+            try {
+                Thread.sleep(500); // 500ms delay
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -40,12 +46,80 @@ public class Fish extends Item {
 
     }
 
+    
+
     // public static String selectFish() {
     //     return fish; 
     // }
     
 }
 
+class animateRiver {
+    static String[] river = {
+    "~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ",
+    "  ~    ~  ~    ~~   ~~    ~   ~~~    ~    ~~   ~  ~~   ~   ",
+    "~  ~  ~  ~  ~  ~~~~  ~   ~~  ~    ~   ~~~  ~~   ~~   ~   ~  ",
+    "  ~    ~    ~  ~~    ~   ~   ~~  ~~   ~    ~~~   ~  ~~~  ~  ",
+    "~  ~  ~~   ~  ~  ~  ~~   ~~   ~  ~~   ~~~  ~    ~~   ~~  ~  ",
+    "  ~    ~~~   ~    ~   ~   ~~   ~~  ~   ~~   ~~   ~  ~~~  ~  ",
+    "~~  ~  ~   ~  ~  ~   ~   ~~   ~~~~   ~    ~~   ~  ~~   ~  ~  ",
+    "  ~  ~~   ~  ~   ~    ~~   ~   ~~   ~~  ~~~   ~   ~  ~~  ~  ",
+    "~  ~   ~  ~~  ~   ~~   ~  ~~   ~~~   ~   ~~   ~   ~~   ~~  ",
+    "  ~   ~~  ~~~   ~~  ~    ~~   ~~   ~~  ~~~  ~~   ~~   ~~  ~  ",
+    "  ~    ~  ~    ~~   ~~    ~   ~~~    ~    ~~   ~  ~~   ~   ",
+    "~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  "
+    };
+    static boolean running = true;
+    public static void main() throws InterruptedException {
+        Scanner input = new Scanner(System.in);
+    
+        Random random = new Random();
+        int direction =1;
+        int shift =0;
+            
+        Thread inputThread = new Thread(() -> {
+            input.nextLine();
+            running=false;
+        });
+        inputThread.start();
+
+        while (running) {
+            IterativePrint.clearScreen();
+        for (String line : river) {
+            System.out.println(shiftLine(modifyWave(line, random), shift));
+        }
+
+        shift += direction;
+        if (shift >= 2 || shift <= -2) {
+            direction *= -1; // Change direction after shifting a few steps
+        }
+
+        try {
+            Thread.sleep(300); // Adjust speed of animation
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+    public static String modifyWave(String line, Random random) {
+        char[] chars = line.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == '~' && random.nextInt(10) > 7) {
+                chars[i] = (random.nextBoolean()) ? ' ' : '~'; // Occasionally remove or add waves
+            }
+        }
+        return new String(chars);
+    }
+
+    public static String shiftLine(String line, int shift) {
+        if (shift > 0) {
+            return " ".repeat(shift) + line.substring(0, Math.max(0, line.length() - shift));
+        } else if (shift < 0) {
+            return line.substring(-shift) + " ".repeat(-shift);
+        }
+        return line;
+    }
+}
 
 
 
