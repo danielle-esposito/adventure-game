@@ -24,7 +24,7 @@ public class Main {
 		// 	fruit.printDetails();
 		// }
 		ArrayList<Bug> bugList = new ArrayList<>();
-		
+
 		Character player = new Character();
 		Intro(player);
 
@@ -43,7 +43,7 @@ public class Main {
 		IterativePrint.printString("Nice to meet you! What's your name? ");
 		String name = input.nextLine();
 		player.setName(name);
-		input.close();
+		//input.close();
 
 	}
 
@@ -55,7 +55,7 @@ public class Main {
 		System.out.println("Select from one of the options below \n[1]Talk to Mr. Resetti\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5]Catch Bugs");
 		Scanner input = new Scanner(System.in);
 		String choice = input.nextLine();
-
+		//input.close();
 		switch (choice) {
 			case "1":
 				System.out.println("Mr. R");
@@ -64,7 +64,7 @@ public class Main {
 				System.out.println("Shop");
 				break;
 			case "3":
-				//Fish.Game(fishList, player);
+				Fish.Game(fishList, player);
 				break;
 			case "4":
 				Fruit.Game(fruitList, player);
