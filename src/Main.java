@@ -44,7 +44,7 @@ public class Main {
 		player.setName(name);
 		//input.close();
 
-		IterativePrint.printString("Mr. Resetti: Well, well, well, if it isn't " + player.name + " You’ve got quite the problem on your hands.",true);
+		IterativePrint.printString("Mr. Resetti: Well, well, well, if it isn't " + player.name + "! You’ve got quite the problem on your hands.",true);
 		IterativePrint.printString(player.name + ": What do you mean?",false);
 		IterativePrint.printString("Mr. Resetti: Don’t you remember the big fancy island house you bought? Now you owe me 50,000 bells! And I want my money NOW!",false);
 		IterativePrint.printString(player.name + ": 50,000 bells? How on earth am I supposed to pay that?!",false);
@@ -58,7 +58,7 @@ public class Main {
 		IterativePrint.printString("Current debt: " + player.debt);
 		IterativePrint.printString("Current money: " + player.money);
 		player.printInventory();
-		System.out.println("Select from one of the options below \n[1]Talk to Mr. Resetti\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5]Catch Bugs");
+		System.out.println("Select from one of the options below \n[1] Talk to Mr. Resetti\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5] Catch Bugs");
 		Scanner input = new Scanner(System.in);
 		String choice = input.nextLine();
 		//input.close();

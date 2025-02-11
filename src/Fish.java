@@ -10,14 +10,15 @@ public class Fish extends Item {
 
     public static void Game(ArrayList<Fish> fishList, Character player) throws InterruptedException {
         IterativePrint.clearScreen();
-        animateRiver.main();
-        IterativePrint.printString("Welcome to the river!", true);
-        IterativePrint.printString("There are plenty of fish to catch!", true);
-        IterativePrint.printString("Ready to fish?");
-        IterativePrint.printString("When ready, type 'cast' to cast your rod!");
-        castAnimation.main();
-        waitForFish.main();
-        //animateRiver();
+        //animateRiver.main();
+        //IterativePrint.printString("Welcome to the river!", true);
+        //IterativePrint.printString("There are plenty of fish to catch!", true);
+        //IterativePrint.printString("Ready to fish?");
+        //IterativePrint.printString("When ready, type 'cast' to cast your rod!");
+        //castAnimation.main();
+        //waitForFish.main();
+        Fish rewardFish = selectFish(fishList);
+        System.out.println(rewardFish.name + " " + rewardFish.bell_value + " " + rewardFish.size);
 
     }
 
@@ -40,8 +41,19 @@ public class Fish extends Item {
 
     
 
-    public static String selectFish() {
-        return fish; 
+    public static Fish selectFish(ArrayList<Fish> fishList) {
+        Random random = new Random();
+        int [] probability = {1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4,5};
+        int randomIndex = random.nextInt(probability.length);
+        ArrayList<Fish> sizedFishList = new ArrayList<>();
+
+        for (Fish fish : fishList) {
+            if (fish.size == probability[randomIndex]) {
+                sizedFishList.add(fish); 
+            }
+        }
+        int randomFish = random.nextInt(sizedFishList.size());
+        return sizedFishList.get(randomFish); 
     }
     
 }
