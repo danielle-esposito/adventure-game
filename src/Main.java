@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException{
 
 		ArrayList<Fish> fishList = new ArrayList<>(); //creates empty new list to store values of all fish objects
 		fishList = CsvImporter.ImportFish("resources/fish.csv",fishList); // sets newly created fishList equal to output from the fish csv file
@@ -47,7 +47,7 @@ public class Main {
 
 	}
 
-	public static void Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList){
+	public static void Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList) throws IOException, InterruptedException {
 		IterativePrint.printString("You got some debt to pay off, here's what you can do!");
 		IterativePrint.printString("Current debt: " + player.debt);
 		IterativePrint.printString("Current money: " + player.money);
