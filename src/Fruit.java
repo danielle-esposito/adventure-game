@@ -7,7 +7,7 @@ public class Fruit extends Item{
         super(values);
 	}
 
-public static void Game(String[] args, ArrayList<Fruit> fruitList, Character player) {
+public static void Game(ArrayList<Fruit> fruitList, Character player) {
    IterativePrint.printString("Welcome to the Fruit Picking Game!");
    IterativePrint.printString("Here your task is to plant and then shake the trees and pick the fruit. This will be the fruit that you will then sell to the Shop to earn some more bells to pay off your debt!");
    
