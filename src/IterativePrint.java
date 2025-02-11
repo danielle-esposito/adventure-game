@@ -25,6 +25,11 @@ public class IterativePrint {
         System.out.println();
         
         if (EnterToContinue == true) {
+            try {
+                Thread.sleep(750);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("Press Enter to continue...");
             input.nextLine();
             clearScreen();
