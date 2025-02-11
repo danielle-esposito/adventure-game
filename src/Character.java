@@ -23,7 +23,7 @@ public class Character {
     }
 
     public void printInventory(){
-        System.out.println("Fish");
+        System.out.println("Fish: ");
         if (fishInv != null){
             for(Fish fish : fishInv){
                 fish.printDetails();

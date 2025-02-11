@@ -37,13 +37,19 @@ public class Main {
 
 	public static void Intro(Character player){
 
-		IterativePrint.printString("Into back and forth narative to be written here");
+		IterativePrint.printString("Guide: Welcome! What's your name?");
 
 		Scanner input = new Scanner(System.in);
-		IterativePrint.printString("Nice to meet you! What's your name? ");
 		String name = input.nextLine();
 		player.setName(name);
 		//input.close();
+
+		IterativePrint.printString("Mr. Resetti: Well, well, well, if it isn't " + player.name + " You’ve got quite the problem on your hands.",true);
+		IterativePrint.printString(player.name + ": What do you mean?",false);
+		IterativePrint.printString("Mr. Resetti: Don’t you remember the big fancy island house you bought? Now you owe me 50,000 bells! And I want my money NOW!",false);
+		IterativePrint.printString(player.name + ": 50,000 bells? How on earth am I supposed to pay that?!",false);
+		IterativePrint.printString("Mr. Resetti: I don’t know, figure it out! Go fishing, catch some bugs, and harvest fruit trees. Just get me my money!",false);
+		IterativePrint.printString("Guide: To pay off your debt, you'll need to earn bells by selling items you collect throughout the island. Good luck, " + player.name + "!",true);
 
 	}
 
@@ -70,7 +76,7 @@ public class Main {
 				Fruit.Game(fruitList, player);
 				break;
 			case "5":
-				//Bug.Game();
+				//Bug.Game(bugList, player);
 				break;
 			default:
 			IterativePrint.printString("Invalid selection, please try again");
