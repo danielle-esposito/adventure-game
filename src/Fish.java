@@ -18,23 +18,23 @@ public class Fish extends Item {
 
     }
 
-    public static void animateBobber() throws InterruptedException {
-        String[] frames = {
-            "      ~~~~~~~~~~~~~~~\n      ~    O~~~     ~\n      ~~~~~~~~~~~~~~~",
-            "      ~~~~~~~~~~~~~~~\n      ~     O~~~    ~\n      ~~~~~~~~~~~~~~~",
-            "      ~~~~~~~~~~~~~~~\n      ~      O~~~   ~\n      ~~~~~~~~~~~~~~~"
-        };
+    // public static void animateBobber() throws InterruptedException {
+    //     String[] frames = {
+    //         "      ~~~~~~~~~~~~~~~\n      ~    O~~~     ~\n      ~~~~~~~~~~~~~~~",
+    //         "      ~~~~~~~~~~~~~~~\n      ~     O~~~    ~\n      ~~~~~~~~~~~~~~~",
+    //         "      ~~~~~~~~~~~~~~~\n      ~      O~~~   ~\n      ~~~~~~~~~~~~~~~"
+    //     };
     
-        for (int i = 0; i < 10; i++) {
-            IterativePrint.clearScreen();
-            System.out.println(frames[i % frames.length]);
-            try {
-                Thread.sleep(500); // 500ms delay
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+    //     for (int i = 0; i < 10; i++) {
+    //         IterativePrint.clearScreen();
+    //         System.out.println(frames[i % frames.length]);
+    //         try {
+    //             Thread.sleep(500); // 500ms delay
+    //         } catch (InterruptedException e) {
+    //             e.printStackTrace();
+    //         }
+    //     }
+    // }
 
     public static void castLine() {
         Scanner input = new Scanner(System.in);
@@ -126,4 +126,9 @@ class animateRiver {
 
 // show little river animation while starting text
 // player types cast to cast their line out, little casting rahrah
-// 
+// wait random time for fish to bite, between x and x seconds
+// print message to indicate something is tugging on line
+// when times up, print nNOW and you have to type reel as quick as possible
+// if you mistype, you dont catch, how many times you have to type is based on rarity
+// time limit too
+//if caught, print ascii art and info saying you caught and add to inventory
