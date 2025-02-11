@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Fruit extends Item{
 	
 	public Fruit(String[] values) {
         super(values);
 	}
 
-public static void Game(String[] args) {
+public static void Game(String[] args, ArrayList<Fruit> fruitList, Character player) {
    IterativePrint.printString("Welcome to the Fruit Picking Game!");
    IterativePrint.printString("Here your task is to plant and then shake the trees and pick the fruit. This will be the fruit that you will then sell to the Shop to earn some more bells to pay off your debt!");
    
@@ -40,4 +43,7 @@ public static void Game(String[] args) {
         }
         IterativePrint.printString("The fruit has fallen!");
     }
+    // Pick a random fruit from arraylist: fruitlist - 
+    // that random fruit should be added to the player inventory
+
 }
