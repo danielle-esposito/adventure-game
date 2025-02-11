@@ -1,0 +1,31 @@
+Intro Sequence
+
+Back and forth convorstaion explaing the situation to the character
+You owe money to Mr. Resetti of set amount X, we'll figure that number later
+somewhere in the intro can prompt the player for their name and can be refrenced in dialouge later
+haven't decided why exactly we owe money but leave that up to creative liberty, if we want to copy animal crossing more then we can say you bought a house on an island and need to pay it off
+Explain that you need to make money to pay back your debt
+To do that you can go fishing, catch bugs, harvest fruit tress
+
+
+Mr. Resetti's office
+
+If user has enough money to pay off debt:
+this is the winning condition for the game
+More creative liberty here, congratuations and some filler narative if needed
+
+If user doesn't have enough money to pay off debt:
+Explain you have to earn more money
+
+
+Shop:
+
+You can introduce shop keepers here if you want
+Welcome player and ask if tthey want to sell or not
+
+if yes
+transaction occurs
+thank the player
+
+if no
+say goodbye to the player
