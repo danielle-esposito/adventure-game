@@ -13,7 +13,10 @@ public class Fish extends Item {
         animateRiver.main();
         IterativePrint.printString("Welcome to the river!", true);
         IterativePrint.printString("There are plenty of fish to catch!", true);
-
+        IterativePrint.printString("Ready to fish?");
+        IterativePrint.printString("When ready, type 'cast' to cast your rod!");
+        castAnimation.main();
+        waitForFish.main();
         //animateRiver();
 
     }
@@ -24,7 +27,6 @@ public class Fish extends Item {
     //         "      ~~~~~~~~~~~~~~~\n      ~     O~~~    ~\n      ~~~~~~~~~~~~~~~",
     //         "      ~~~~~~~~~~~~~~~\n      ~      O~~~   ~\n      ~~~~~~~~~~~~~~~"
     //     };
-    
     //     for (int i = 0; i < 10; i++) {
     //         IterativePrint.clearScreen();
     //         System.out.println(frames[i % frames.length]);
@@ -36,21 +38,11 @@ public class Fish extends Item {
     //     }
     // }
 
-    public static void castLine() {
-        Scanner input = new Scanner(System.in);
-        
-
-
-
-        input.close();
-
-    }
-
     
 
-    // public static String selectFish() {
-    //     return fish; 
-    // }
+    public static String selectFish() {
+        return fish; 
+    }
     
 }
 
@@ -121,6 +113,84 @@ class animateRiver {
     }
 }
 
+class castAnimation {
+    static String[] frames = {
+        // Rod Casting and Water Waves
+        "   \n         | \n         | \n         | \n         | \n~~~~~~~~~~~~~~~\n~  ~~~ ~ ~~  ~  ~~~ ~ ~~~~ ~~",
+        "   \n         |\\  \n         | \\ \n         |  \\ \n         |   \\ \n~~~~~~~~~~~~~~~\n ~~  ~  ~ ~~   ~ ~~~  ~~  ~  ~~ ~~",
+        "   \n         |   \\ \n         |    \\ \n         |     \\ \n         |      \\ \n~~~~~~~~~~~~~~~\n  ~  ~  ~~ ~   ~ ~~~~ ~ ~~~  ~ ~ ~~",
+        "   \n         |     \\ \n         |      \\ \n         |       \\ \n         |        \\ \n~~~~~~~~~~~~~~~\n ~  ~~  ~   ~ ~~~~   ~~  ~    ~~~ ~ ",
+        "   \n         |       \\ \n         |        \\ \n         |         \\ \n         |          \\ \n~~~~~~~~~~~~~~~\n ~   ~   ~ ~   ~~  ~~ ~    ~ ~   ~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~~~  ~~ ~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~~ ~ ~~  ~  ~~~ ~ ~~~~ ~~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~~~ ~~  ~  ~\n~~~~~~~~~~~~~~~ \n~~  ~  ~ ~~   ~ ~~~  ~~  ~  ~~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~ ~~ ~ ~~  \n~~~~~~~~~~~~~~~ \n ~  ~  ~~ ~   ~ ~~~~ ~ ~~~  ~ ~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~~ ~~ ~ ~ ~~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~  ~   ~ ~~~~   ~~  ~    ~~~ ~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~   ~ ~~~~ ~\n~~~~~~~~~~~~~~~ \n ~   ~   ~ ~   ~~  ~~ ~    ~ ~   ~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~~~  ~~ ~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~~ ~ ~~  ~  ~~~ ~ ~~~~ ~~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~~~ ~~  ~  ~\n~~~~~~~~~~~~~~~ \n~~  ~  ~ ~~   ~ ~~~  ~~  ~  ~~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~ ~~ ~ ~~  \n~~~~~~~~~~~~~~~ \n ~  ~  ~~ ~   ~ ~~~~ ~ ~~~  ~ ~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~~ ~~ ~ ~ ~~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~  ~   ~ ~~~~   ~~  ~    ~~~ ~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~   ~ ~~~~ ~\n~~~~~~~~~~~~~~~ \n ~   ~   ~ ~   ~~  ~~ ~    ~ ~   ~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~~~  ~~ ~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~~ ~ ~~  ~  ~~~ ~ ~~~~ ~~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~~~ ~~  ~  ~\n~~~~~~~~~~~~~~~ \n~~  ~  ~ ~~   ~ ~~~  ~~  ~  ~~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~ ~~ ~ ~~  \n~~~~~~~~~~~~~~~ \n ~  ~  ~~ ~   ~ ~~~~ ~ ~~~  ~ ~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~~ ~~ ~ ~ ~~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~  ~   ~ ~~~~   ~~  ~    ~~~ ~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~   ~ ~~~~ ~\n~~~~~~~~~~~~~~~ \n ~   ~   ~ ~   ~~  ~~ ~    ~ ~   ~"
+    };
+    
+    public static void main() throws InterruptedException {
+        Scanner input = new Scanner(System.in);
+        if ((input.nextLine()).equals("cast")) {
+            for (String frame : frames) {
+                IterativePrint.clearScreen();
+                System.out.println(frame);
+                try {
+                    Thread.sleep(300); // Adjust speed of casting animation
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        } 
+        input.close();
+    }
+}
+
+class waitForFish {
+    static String[] frames = {
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~~~ ~~  ~  ~\n~~~~~~~~~~~~~~~ \n~~  ~  ~ ~~   ~ ~~~  ~~  ~  ~~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~ ~~ ~ ~~  \n~~~~~~~~~~~~~~~ \n ~  ~  ~~ ~   ~ ~~~~ ~ ~~~  ~ ~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~~ ~~ ~ ~ ~~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~  ~   ~ ~~~~   ~~  ~    ~~~ ~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~   ~ ~~~~ ~\n~~~~~~~~~~~~~~~ \n ~   ~   ~ ~   ~~  ~~ ~    ~ ~   ~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~~~  ~~ ~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~~ ~ ~~  ~  ~~~ ~ ~~~~ ~~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~~~ ~~  ~  ~\n~~~~~~~~~~~~~~~ \n~~  ~  ~ ~~   ~ ~~~  ~~  ~  ~~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~ ~~ ~ ~~  \n~~~~~~~~~~~~~~~ \n ~  ~  ~~ ~   ~ ~~~~ ~ ~~~  ~ ~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~~ ~~ ~ ~ ~~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~  ~   ~ ~~~~   ~~  ~    ~~~ ~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~   ~ ~~~~ ~\n~~~~~~~~~~~~~~~ \n ~   ~   ~ ~   ~~  ~~ ~    ~ ~   ~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~~~  ~~ ~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~~ ~ ~~  ~  ~~~ ~ ~~~~ ~~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~~~ ~~  ~  ~\n~~~~~~~~~~~~~~~ \n~~  ~  ~ ~~   ~ ~~~  ~~  ~  ~~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~ ~~ ~~ ~ ~~  \n~~~~~~~~~~~~~~~ \n ~  ~  ~~ ~   ~ ~~~~ ~ ~~~  ~ ~ ~~",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~~~ ~~ ~ ~ ~~ ~\n~~~~~~~~~~~~~~~ \n ~  ~~  ~   ~ ~~~~   ~~  ~    ~~~ ~ ",
+        "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~   ~ ~~~~ ~\n~~~~~~~~~~~~~~~ \n ~   ~   ~ ~   ~~  ~~ ~    ~ ~   ~"
+    };
+        
+    public static void main() throws InterruptedException {
+        int duration = 5;
+        long endTime = System.currentTimeMillis() + (duration * 1000);
+
+
+        while (System.currentTimeMillis() < endTime) {
+            for (String frame : frames) {
+                IterativePrint.clearScreen();
+                System.out.println(frame);
+                try {
+                    Thread.sleep(300); // Adjust speed of casting animation
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
 
 
 
