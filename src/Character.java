@@ -8,7 +8,9 @@ public class Character {
     public ArrayList<Bug> bugInv;
     public ArrayList<Fruit> fruitInv;
 
-    public Character(String name) {
+    public Character(){}
+
+    public void setName(String name) {
         this.name = name;
     }
 
