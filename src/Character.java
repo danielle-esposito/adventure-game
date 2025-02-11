@@ -12,6 +12,7 @@ public class Character {
 
     public void setName(String name) {
         this.name = name;
+        this.debt = 5000;
     }
 
     public void removeDebt(int debt) {
