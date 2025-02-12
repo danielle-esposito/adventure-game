@@ -26,8 +26,9 @@ public class Character {
     }
 
     public void printInventory(){
+        IterativePrint.printString("\n---- Item Inventory ----");
         System.out.println("Fish: ");
-        if (fishInv != null){
+        if (fishInv.size() > 0){
             for(Fish fish : fishInv){
                 fish.printDetails();
             }
@@ -35,7 +36,7 @@ public class Character {
             System.out.println("No Fish in inventory");
         }
         System.out.println("Bugs:");
-        if (bugInv != null){
+        if (bugInv.size() > 0){
             for(Bug bug : bugInv){
                 bug.printDetails();
             }
@@ -43,12 +44,13 @@ public class Character {
             System.out.println("No Bugs in inventory");
         }
         System.out.println("Fruit: ");
-        if (fruitInv != null){
+        if (fruitInv.size() > 0){
             for(Fruit fruit : fruitInv){
                 fruit.printDetails();
             }
         } else {
             System.out.println("No Fruit in inventory");
         }
+        System.out.println();
     }
 }

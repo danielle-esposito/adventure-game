@@ -36,13 +36,14 @@ public class Main {
 	}
 
 	public static void Intro(Character player){
-
+		IterativePrint.clearScreen();
 		IterativePrint.printString("Guide: Welcome! What's your name?");
 
 		Scanner input = new Scanner(System.in);
 		String name = input.nextLine();
 		player.setName(name);
 		//input.close();
+		IterativePrint.printString("Guide: You can press [Enter] to advance the text",false);
 
 		IterativePrint.printString("Mr. Resetti: Well, well, well, if it isn't " + player.name + "! You’ve got quite the problem on your hands.",true);
 		IterativePrint.printString(player.name + ": What do you mean?",false);
@@ -58,7 +59,7 @@ public class Main {
 		IterativePrint.printString("Current debt: " + player.debt);
 		IterativePrint.printString("Current money: " + player.money);
 		player.printInventory();
-		System.out.println("Select from one of the options below \n[1] Talk to Mr. Resetti\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5] Catch Bugs");
+		System.out.println("Select from one of the options below: \n[1] Talk to Mr. Resetti\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5] Catch Bugs");
 		Scanner input = new Scanner(System.in);
 		String choice = input.nextLine();
 		//input.close();
@@ -79,7 +80,8 @@ public class Main {
 				//Bug.Game(bugList, player);
 				break;
 			default:
-			IterativePrint.printString("Invalid selection, please try again");
+			IterativePrint.clearScreen();
+			IterativePrint.printString("Invalid selection, please try again\n ");
 		}
 
 	}
