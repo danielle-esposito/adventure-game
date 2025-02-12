@@ -19,6 +19,6 @@ public class Item {
 	}
 
 	public void printDetails() {
-		System.out.println(this.name + " Size: " + this.size + " Value: " + " Bells");
+		System.out.println(this.name + " Value: " + this.bell_value + " Bells");
 	}
 }

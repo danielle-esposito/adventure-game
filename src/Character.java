@@ -13,6 +13,9 @@ public class Character {
     public void setName(String name) {
         this.name = name;
         this.debt = 5000;
+        this.fishInv = new ArrayList<>();
+        this.bugInv = new ArrayList<>();
+        this.fruitInv = new ArrayList<>();
     }
 
     public void removeDebt(int debt) {
