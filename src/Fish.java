@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Fish extends Item {
 
-    // creates fish from csv + item.java method
     public Fish(String[] values) {
         super(values);
     }
