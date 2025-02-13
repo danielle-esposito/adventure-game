@@ -26,7 +26,8 @@ public class Shop {
                     sellItems(player.fruitInv, player);
                     break;
                 case "4":
-                    System.out.println("Thanks for visiting!");
+                    IterativePrint.printString("Thanks for visiting!", true);
+                    //IterativePrint.clearScreen();
                     return;
                 default:
                     System.out.println("Invalid choice, try again.");

@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.util.Scanner;
@@ -43,7 +42,7 @@ public class Main {
 
 		Scanner input = new Scanner(System.in); //Scanner user input
 		String name = input.nextLine(); // Get the player's name from the user and set it to their class object
-		player.setName(name); 
+		player.setName(name);
 		//input.close();
 
 		IterativePrint.printString("Guide: You can press [Enter] to advance the text",false);
@@ -51,7 +50,7 @@ public class Main {
 		IterativePrint.printString(player.name + ": What do you mean?",false);
 		IterativePrint.printString("Tom Nook: Don't you remember the big fancy island house you bought? Now you owe me 50,000 bells! And I want my money NOW!",false);
 		IterativePrint.printString(player.name + ": 50,000 bells? How on earth am I supposed to pay that?!",false);
-		IterativePrint.printString("Tom Nook: I don't know, figure it out! Go fishing, catch some bugs, and harvest fruit trees. Just get me my money!",false);
+		IterativePrint.printString("Tom Nook: I don't know, figure it out! Go fishing, catch some bugs, harvest fruit from trees, I don't care! Just get me my money!",false);
 		IterativePrint.printString("Guide: To pay off your debt, you'll need to earn bells by selling items you collect throughout the island. Good luck, " + player.name + "!",true);
 
 	}
@@ -68,7 +67,7 @@ public class Main {
 
 		switch (choice) { // Simple numeric choice selector to launch needed program
 			case "1":
-				System.out.println("Mr. R");
+				System.out.println("Tom Nook");
 				break;
 			case "2":
 				Shop shop = new Shop();
