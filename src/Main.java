@@ -47,11 +47,11 @@ public class Main {
 		//input.close();
 
 		IterativePrint.printString("Guide: You can press [Enter] to advance the text",false);
-		IterativePrint.printString("Mr. Resetti: Well, well, well, if it isn't " + player.name + "! You've got quite the problem on your hands.",true);
+		IterativePrint.printString("Tom Nook: Well, well, well, if it isn't " + player.name + "! You've got quite the problem on your hands.",true);
 		IterativePrint.printString(player.name + ": What do you mean?",false);
-		IterativePrint.printString("Mr. Resetti: Don't you remember the big fancy island house you bought? Now you owe me 50,000 bells! And I want my money NOW!",false);
+		IterativePrint.printString("Tom Nook: Don't you remember the big fancy island house you bought? Now you owe me 50,000 bells! And I want my money NOW!",false);
 		IterativePrint.printString(player.name + ": 50,000 bells? How on earth am I supposed to pay that?!",false);
-		IterativePrint.printString("Mr. Resetti: I don't know, figure it out! Go fishing, catch some bugs, and harvest fruit trees. Just get me my money!",false);
+		IterativePrint.printString("Tom Nook: I don't know, figure it out! Go fishing, catch some bugs, and harvest fruit trees. Just get me my money!",false);
 		IterativePrint.printString("Guide: To pay off your debt, you'll need to earn bells by selling items you collect throughout the island. Good luck, " + player.name + "!",true);
 
 	}
@@ -61,7 +61,7 @@ public class Main {
 		IterativePrint.printString("Current debt: " + player.debt);
 		IterativePrint.printString("Current money: " + player.money);
 		player.printInventory(); // Shows them their inventory
-		System.out.println("Select from one of the options below: \n[1] Talk to Mr. Resetti\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5] Catch Bugs"); // Display game choices
+		System.out.println("Select from one of the options below: \n[1] Talk to Tom Nook\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5] Catch Bugs"); // Display game choices
 		Scanner input = new Scanner(System.in);
 		String choice = input.nextLine();
 		//input.close();
