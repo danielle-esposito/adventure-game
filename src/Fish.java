@@ -19,6 +19,7 @@ public class Fish extends Item {
         //waitForFish.main();
         Fish rewardFish = selectFish(fishList);
         System.out.println(rewardFish.name + " " + rewardFish.bell_value + " " + rewardFish.size);
+        player.fishInv.add(rewardFish);
 
     }
 
