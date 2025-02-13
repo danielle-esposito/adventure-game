@@ -71,7 +71,8 @@ public class Main {
 				System.out.println("Mr. R");
 				break;
 			case "2":
-				System.out.println("Shop");
+				Shop shop = new Shop();
+				shop.visitShop(player);
 				break;
 			case "3":
 				Fish.Game(fishList, player);
