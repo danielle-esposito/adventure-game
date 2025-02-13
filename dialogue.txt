@@ -21,7 +21,7 @@ Tom Nooki: I don’t know, figure it out! Go fishing, catch some bugs, and harve
 Guide: To pay off your debt, you'll need to earn bells by selling items you collect throughout the island. Good luck, [player]!
 
 
-Tom Nook's office:
+Tom Nook's Office:
 
 
 If the player has enough money:
@@ -36,7 +36,7 @@ If the player doesn't have enough money:
 Tom Nook: What? You don’t even have enough money! Get back out there and earn more bells! I want my money, [player], and I want it now!
 
 
-Shop:
+Store:
 Tommy : Welcome to Nook’s Cranny! I'm Tommy, and this is Timmy.
 Timmy: … Timmy!
 Tommy: Do you have anything to sell?
