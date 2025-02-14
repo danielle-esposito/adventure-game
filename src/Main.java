@@ -55,7 +55,7 @@ public class Main {
 
 	}
 
-	public static void Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList) throws IOException, InterruptedException { // core game sequence
+	public static boolean Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList) throws IOException, InterruptedException { // core game sequence
 		IterativePrint.printString("You got some debt to pay off, here's what you can do!"); // Begins with telling the user their balances
 		IterativePrint.printString("Current debt: " + player.debt);
 		IterativePrint.printString("Current money: " + player.money);
@@ -67,7 +67,7 @@ public class Main {
 
 		switch (choice) { // Simple numeric choice selector to launch needed program
 			case "1":
-				System.out.println("Tom Nook");
+				winCondition = Nook.Office(player);
 				break;
 			case "2":
 				Shop shop = new Shop();
@@ -86,6 +86,7 @@ public class Main {
 			IterativePrint.clearScreen();
 			IterativePrint.printString("Invalid selection, please try again\n ");
 		}
+		return winCondition;
 
 	}
 }
