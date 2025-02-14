@@ -35,7 +35,7 @@ public class Main {
 		}
 	}
 
-	public static void Intro(Character player){
+	public static void Intro(Character player){ // Written by:
 
 		IterativePrint.clearScreen(); //Introduction diolougue
 		IterativePrint.printString("Guide: Welcome! What's your name?");
@@ -43,9 +43,8 @@ public class Main {
 		Scanner input = new Scanner(System.in); //Scanner user input
 		String name = input.nextLine(); // Get the player's name from the user and set it to their class object
 		player.setName(name);
-		//input.close();
 
-		IterativePrint.printString("Guide: You can press [Enter] to advance the text",false);
+		IterativePrint.printString("Guide: You can press [Enter] to advance the text",false); // Dialogue continued
 		IterativePrint.printString("Tom Nook: Well, well, well, if it isn't " + player.name + "! You've got quite the problem on your hands.",true);
 		IterativePrint.printString(player.name + ": What do you mean?",false);
 		IterativePrint.printString("Tom Nook: Don't you remember the big fancy island house you bought? Now you owe me 50,000 bells! And I want my money NOW!",false);
@@ -55,7 +54,7 @@ public class Main {
 
 	}
 
-	public static boolean Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList) throws IOException, InterruptedException { // core game sequence
+	public static boolean Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList) throws IOException, InterruptedException { // core game sequence Written by: 
 		IterativePrint.printString("You got some debt to pay off, here's what you can do!"); // Begins with telling the user their balances
 		IterativePrint.printString("Current debt: " + player.debt);
 		IterativePrint.printString("Current money: " + player.money);
@@ -63,30 +62,29 @@ public class Main {
 		System.out.println("Select from one of the options below: \n[1] Talk to Tom Nook\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5] Catch Bugs"); // Display game choices
 		Scanner input = new Scanner(System.in);
 		String choice = input.nextLine();
-		//input.close();
 
 		switch (choice) { // Simple numeric choice selector to launch needed program
 			case "1":
-				winCondition = Nook.Office(player);
+				winCondition = Nook.Office(player); // Call Nook office method, this also checks if the player has won the game or not through the winCondition bool
 				break;
 			case "2":
-				Shop shop = new Shop();
-				shop.visitShop(player);
+				Shop shop = new Shop(); 
+				shop.visitShop(player); // Call shop method to sell items
 				break;
 			case "3":
-				Fish.Game(fishList, player);
+				Fish.Game(fishList, player); // Call Fish Game method to play minigame
 				break;
 			case "4":
-				Fruit.Game(fruitList, player);
+				Fruit.Game(fruitList, player); // Call Fruit Game method to play minigame
 				break;
 			case "5":
-				//Bug.Game(bugList, player);
+				//Bug.Game(bugList, player); // Call Bug Game method to play minigame
 				break;
-			default: // case checking if their response was invalid
+			default: // If their response was invalid, inform user
 			IterativePrint.clearScreen();
 			IterativePrint.printString("Invalid selection, please try again\n ");
 		}
-		return winCondition;
+		return winCondition; // Since the menu sequence is running in a loop we need to return if whether the game has been won
 
 	}
 }

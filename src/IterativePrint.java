@@ -6,16 +6,16 @@
 import java.util.Scanner;
 
 public class IterativePrint {
-    public static void printString(String text){
-        for (char character : text.toCharArray()) {
-            System.out.print(character);
+    public static void printString(String text){ // Standard method just prints iteratively
+        for (char character : text.toCharArray()) { // takes the incoming string and turns it into an array of chars and loops through each one
+            System.out.print(character); // print each char
             try {
-            Thread.sleep(50);
-            } catch (InterruptedException e) {
+            Thread.sleep(50); // wait 50ms between printing each char 
+            } catch (InterruptedException e) { // This is a catch for when using Thread.sleep
                 e.printStackTrace();
             }
         }
-        System.out.println();
+        System.out.println(); // new line
     }
     public static void printString(String text, boolean EnterToContinue) {
         for (char character : text.toCharArray()) {
@@ -29,7 +29,7 @@ public class IterativePrint {
         Scanner input = new Scanner(System.in);
         System.out.println();
         
-        //if bool=true, then the program prints out "Press Enter to continue" and waits for user input
+        // if bool=true, then the program prints out "Press Enter to continue" and waits for user input
         if (EnterToContinue == true) {
             try {
                 Thread.sleep(750);
