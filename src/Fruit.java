@@ -11,12 +11,12 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
    IterativePrint.printString("Welcome to the Fruit Picking Game!");
    IterativePrint.printString("Here your task is to plant and then shake the trees and pick the fruit. This will be the fruit that you will then sell to the Shop to earn some more bells to pay off your debt!");
    
-   plantTree();
-   shakeTree();
+   characterPlantTree();
+   characterShakeTree();
    
    }
     
-    public static void plantTree() {
+    public static void characterPlantTree() {
         System.out.print("First, you need to plant a tree...");
         for (int i = 0; i < 10; i++) { // 5 seconds total
             try {
@@ -29,7 +29,7 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
         IterativePrint.printString("\nThe tree has fully grown!");
     }
 
-    public static void shakeTree() {
+    public static void characterShakeTree() {
         String shakeText = "Shake! Shake! Shake!";
         for (int i = 0; i < 10; i++) { // 10 shakes
             try {
