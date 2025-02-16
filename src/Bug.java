@@ -51,7 +51,7 @@ public class Bug extends Item {
 
             if (System.in.available() > 0) {
                 input.nextLine();
-                return (bugPosition == 5); // Successful catch if in the center
+                return (bugPosition == 6); // This value should be 5 but I think with how the timing get's processed i had to make it 6 to work
             }
         }
         return false; // Bug escapes if no successful attempt
