@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.IOException;
 
 public class Bug extends Item {
 
@@ -9,13 +10,13 @@ public class Bug extends Item {
         super(values);
     }
 
-    public static void Game(ArrayList<Bug> bugList, Character player) throws InterruptedException {
+    public static void Game(ArrayList<Bug> bugList, Character player, Scanner input) throws InterruptedException, IOException {
         IterativePrint.clearScreen();
         IterativePrint.printString("Welcome to the bug-catching minigame!", true);
         IterativePrint.printString("A bug is moving back and forth. Press [Enter] at the right moment to catch it!", true);
 
         Bug targetBug = selectBug(bugList);
-        boolean caught = attemptCatch(targetBug);
+        boolean caught = attemptCatch(targetBug, input);
 
         if (caught) {
             IterativePrint.printString("You caught a " + targetBug.name + "!", true);
@@ -30,13 +31,12 @@ public class Bug extends Item {
         return bugList.get(random.nextInt(bugList.size())); // Randomly selects a bug
     }
 
-    private static boolean attemptCatch(Bug bug) throws InterruptedException {
+    private static boolean attemptCatch(Bug bug, Scanner input) throws InterruptedException, IOException {
         Random random = new Random();
         int bugPosition = 0;
         int direction = 1;
         int maxPosition = 10;
         
-        Scanner input = new Scanner(System.in);
         IterativePrint.printString("Press [Enter] when the bug reaches the center (5).", true);
         
         for (int i = 0; i < 15; i++) { // Bug moves back and forth for 15 frames

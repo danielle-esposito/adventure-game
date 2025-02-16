@@ -17,32 +17,32 @@ public class Main {
 		//for (Fish fish : fishList) {
 		//	fish.printDetails();
 		//}
-		System.out.println(bugList.size());
-		for (Bug bug : bugList) {
-			bug.printCapture();
-			bug.printDetails();
-		}
+		// System.out.println(bugList.size());
+		// for (Bug bug : bugList) {
+		// 	bug.printCapture();
+		// 	bug.printDetails();
+		// }
 		// for (Fruit fruit: fruitList) {
 		// 	fruit.printDetails();
 		// }
-
+		Scanner input = new Scanner(System.in);
 		// Game Sequence begins
 		Character player = new Character(); // Initilize the player as an intance of the Character class
-		Intro(player); // Run's the intro portion of the game sequence, player is passed through because the player's name is set during this sequence
+		Intro(player, input); // Run's the intro portion of the game sequence, player is passed through because the player's name is set during this sequence
 
 		boolean winCondition = false;
 
 		while(winCondition == false){ //Gameplay loop keeps occuring untill the game is won
-			Menu(player, winCondition, fishList, bugList, fruitList); // The game revolves around the menu which let's you choose what action's to take
+			Menu(player, winCondition, fishList, bugList, fruitList, input); // The game revolves around the menu which let's you choose what action's to take
 		}
 	}
 
-	public static void Intro(Character player){ // Written by:
+	public static void Intro(Character player, Scanner input){ // Written by:
 
 		IterativePrint.clearScreen(); //Introduction diolougue
 		IterativePrint.printString("Guide: Welcome! What's your name?");
 
-		Scanner input = new Scanner(System.in); //Scanner user input
+		//Scanner input = new Scanner(System.in); //Scanner user input
 		String name = input.nextLine(); // Get the player's name from the user and set it to their class object
 		player.setName(name);
 
@@ -56,14 +56,14 @@ public class Main {
 
 	}
 
-	public static boolean Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList) throws IOException, InterruptedException { // core game sequence Written by: 
+	public static boolean Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList, Scanner input) throws IOException, InterruptedException { // core game sequence Written by: 
 		IterativePrint.clearScreen();
 		IterativePrint.printString("You got some debt to pay off, here's what you can do!"); // Begins with telling the user their balances
 		IterativePrint.printString("Current debt: " + player.debt);
 		IterativePrint.printString("Current money: " + player.money);
 		player.printInventory(); // Shows them their inventory
 		System.out.println("Select from one of the options below: \n[1] Talk to Tom Nook\n[2] Vist the shop to sell your Items\n[3] Go Fishing\n[4] Gather Fruit\n[5] Catch Bugs"); // Display game choices
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		String choice = input.nextLine();
 
 		switch (choice) { // Simple numeric choice selector to launch needed program
@@ -75,13 +75,13 @@ public class Main {
 				shop.visitShop(player); // Call shop method to sell items
 				break;
 			case "3":
-				Fish.Game(fishList, player); // Call Fish Game method to play minigame
+				Fish.Game(fishList, player, input); // Call Fish Game method to play minigame
 				break;
 			case "4":
 				Fruit.Game(fruitList, player); // Call Fruit Game method to play minigame
 				break;
 			case "5":
-				//Bug.Game(bugList, player); // Call Bug Game method to play minigame
+				Bug.Game(bugList, player, input); // Call Bug Game method to play minigame
 				break;
 			default: // If their response was invalid, inform user
 			IterativePrint.clearScreen();

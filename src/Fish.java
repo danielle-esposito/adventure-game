@@ -10,8 +10,8 @@ public class Fish extends Item {
         super(values);
     }
     // section of code that handles execution of the game itself
-    public static void Game(ArrayList<Fish> fishList, Character player) throws InterruptedException {
-        Scanner input = new Scanner(System.in); //defined scanner globally
+    public static void Game(ArrayList<Fish> fishList, Character player, Scanner input) throws InterruptedException {
+        //Scanner input = new Scanner(System.in); //defined scanner globally
         IterativePrint.clearScreen();
         
         animateRiver.main(input);
@@ -33,7 +33,6 @@ public class Fish extends Item {
         }
         System.out.println("Enter to continue");
         input.nextLine();
-        input.close(); // closes scanner 
     }
 
     
