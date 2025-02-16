@@ -1,3 +1,4 @@
+import java.util.Scanner; 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.stream.IntStream; 
@@ -21,13 +22,33 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
 	Scanner scanner = new Scanner(System.in); 
 	    
         System.out.print("First, you need to plant a tree, but before you can do that, you'll need to answer a question...");
-	System.out.println("Convert the following number to binary code: 36");
+	public static boolean plantTreeGame() {
+        	Random random = new Random();
+        	Scanner scanner = new Scanner(System.in);
 
-	String characterResponse = scanner.nextLine().trim(); 
+        	int decimalNumber = random.nextInt(256); // Generates a random number between 0 and 255
+        	String binaryNumber = Integer.toBinaryString(decimalNumber);
 
-	if (characterResponse.equals("100100")) {
-		System.out.println("That is correct! Your tree will now proceed to plant!"); 
+        System.out.println("Convert the following decimal number to binary:");
+        System.out.println(decimalNumber);
+        System.out.print("Your answer: ");
+        String characterResponse = scanner.nextLine();
 		
+        scanner.close();
+ 
+	if (characterResponse.equals(binaryNumber)) {
+            System.out.println("That is correct! Your tree will now proceed to plant and grow!");
+            return true;
+        } else {
+            System.out.println("Not quite... The correct answer was: " + binaryNumber + " try again");
+            return false;
+        }
+    }
+        boolean binarySolved = false;
+        while (binarySolved == false){
+            binarySolved = plantTreeGame();
+    }
+}
     	IntStream.range(0, 10).forEach(i -> {
 		try {
 		    Thread.sleep(500);
@@ -36,13 +57,13 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
     		}
 		System.out.print(".");
 	});
-	System.out.println("\nThe tree has fully grown now!");
-    } else {
-	System.out.println("Not quite... try again :("); 
-	}
-    }	    
+	System.out.println("\nThe tree has fully grown now!");  
+
 	
     public static void characterShakeTree() {
+	System.out.println("Good, now that you've planted your tree, you'll need to shake it to retrieve the fruit.");
+	    System.out.println("However, once again, you need to answer the following riddle...");
+	    System.out.println("
         String shakeText = "Shake! Shake! Shake!";
         for (int i = 0; i < 10; i++) { // 10 shakes
             try {
