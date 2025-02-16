@@ -13,13 +13,13 @@ public class Fish extends Item {
     public static void Game(ArrayList<Fish> fishList, Character player) throws InterruptedException {
         IterativePrint.clearScreen();
         
-        // animateRiver.main();
-        // IterativePrint.printString("Welcome to the river!", true);
-        // IterativePrint.printString("There are plenty of fish to catch!", true);
-        // IterativePrint.printString("Type 'cast' to cast your rod!");
-        // IterativePrint.printString("Type 'reel' to reel in your line! But be careful to not mistype!");
-        // IterativePrint.printString("Ready to fish? Type 'cast'!");
-        // castAnimation.main();
+        animateRiver.main();
+        IterativePrint.printString("Welcome to the river!", true);
+        IterativePrint.printString("There are plenty of fish to catch!", true);
+        IterativePrint.printString("Type 'cast' to cast your rod!");
+        IterativePrint.printString("Type 'reel' to reel in your line! But be careful to not mistype!");
+        IterativePrint.printString("Ready to fish? Type 'cast'!");
+        castAnimation.main();
         Fish rewardFish = selectFish(fishList);
         waitForFish.main(rewardFish);
         System.out.println("You feel a fish tugging on the line!");
