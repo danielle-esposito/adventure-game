@@ -93,11 +93,8 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
 	int randomFruit = random.nextInt(fruitList.size());
         return fruitList.get(randomFruit);
  }
-	System.out.println("Now you will see what fruit you've gotten!");	
-	selectFruit();
-	selectedFruit.printCapture(); 
-	
-     
-    // Pick a random fruit from arraylist: fruitlist - 
-    // that random fruit should be added to the player inventory
+	Fruit selectedFruit = selectFruit(fruitList);
+	selectedFruit.printCapture;
 
+// Store the fruit you got into the inve
+	player.fruitInv.add(selectedFruit); 
