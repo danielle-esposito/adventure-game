@@ -90,7 +90,7 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
     }
  public static Fruit selectFruit(ArrayList<Fruit> fruitList) {
         Random random = new Random();
-        int [] probability = {
+	
      
     // Pick a random fruit from arraylist: fruitlist - 
     // that random fruit should be added to the player inventory
