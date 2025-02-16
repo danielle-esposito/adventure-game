@@ -18,7 +18,16 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
    }
     
     public static void characterPlantTree() {
-        System.out.print("First, you need to plant a tree...");
+	Scanner scanner = new Scanner(System.in); 
+	    
+        System.out.print("First, you need to plant a tree, but before you can do that, you'll need to answer a question...");
+	System.out.println("Convert the following number to binary code: 36");
+
+	String characterResponse = scanner.nextLine().trim(); 
+
+	if (characterResponse.equals("100100)) {
+		System.out.println("That is correct! Your tree will now proceed to plant!"); 
+		
     	IntStream.range(0, 10).forEach(i -> {
 		try {
 		    Thread.sleep(500);
@@ -28,7 +37,10 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
 		System.out.print(".");
 	});
 	System.out.println("\nThe tree has fully grown now!");
-    }
+    } else {
+	System.out.println("Not quite... try again :("); 
+	}
+    }	    
 	
     public static void characterShakeTree() {
         String shakeText = "Shake! Shake! Shake!";
