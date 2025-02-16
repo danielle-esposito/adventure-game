@@ -25,7 +25,7 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
 
 	String characterResponse = scanner.nextLine().trim(); 
 
-	if (characterResponse.equals("100100)) {
+	if (characterResponse.equals("100100")) {
 		System.out.println("That is correct! Your tree will now proceed to plant!"); 
 		
     	IntStream.range(0, 10).forEach(i -> {
