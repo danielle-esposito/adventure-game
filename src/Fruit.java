@@ -63,7 +63,15 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
     public static void characterShakeTree() {
 	System.out.println("Good, now that you've planted your tree, you'll need to shake it to retrieve the fruit.");
 	    System.out.println("However, once again, you need to answer the following riddle...");
-	    System.out.println("
+	    System.out.println("You go at red, but stop at green. What am I?");
+
+	    Scanner scanner = new Scanner(System.in); 
+
+	    String playerResponse = scanner.nextLine().trim(); 
+
+	if (playerResponse.equals("watermelon" || "Watermelon")) {
+		System.out.println("Correct, now you can shake the tree!");
+		
         String shakeText = "Shake! Shake! Shake!";
         for (int i = 0; i < 10; i++) { // 10 shakes
             try {
@@ -76,8 +84,10 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
             System.out.println(padding + shakeText);
         }
         IterativePrint.printString("Good job! You've successfully made the fruit fall :)");
+    } else {
+	    System.out.println("That is incorrect, try again!");
+	}
     }
     // Pick a random fruit from arraylist: fruitlist - 
     // that random fruit should be added to the player inventory
 
-}
