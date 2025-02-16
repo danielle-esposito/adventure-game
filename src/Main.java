@@ -9,7 +9,7 @@ public class Main {
 		ArrayList<Fish> fishList = new ArrayList<>(); // creates empty arrayList for Fish(Item) objects to be stored
 		fishList = CsvImporter.ImportFish("resources/fish.csv",fishList); // sets this arraylist to to contain all of the fish objects imported form the CSV
 		ArrayList<Bug> bugList = new ArrayList<>();
-		//bugList = CsvImporter.ImportBugs("resources/bug.csv",bugList);
+		bugList = CsvImporter.ImportBugs("resources/bug.csv",bugList);
 		ArrayList<Fruit> fruitList = new ArrayList<>();
 		fruitList = CsvImporter.ImportFruit("resources/fruit.csv",fruitList);
 
@@ -17,9 +17,11 @@ public class Main {
 		//for (Fish fish : fishList) {
 		//	fish.printDetails();
 		//}
-		//for (Bug bug : bugList) {
-		//	bug.printDetails();
-		//}
+		System.out.println(bugList.size());
+		for (Bug bug : bugList) {
+			bug.printCapture();
+			bug.printDetails();
+		}
 		// for (Fruit fruit: fruitList) {
 		// 	fruit.printDetails();
 		// }
