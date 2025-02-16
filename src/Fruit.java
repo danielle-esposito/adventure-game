@@ -90,6 +90,12 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
     }
  public static Fruit selectFruit(ArrayList<Fruit> fruitList) {
         Random random = new Random();
+	int randomFruit = random.nextInt(fruitList.size());
+        return fruitList.get(randomFruit);
+ }
+	System.out.println("Now you will see what fruit you've gotten!");	
+	selectFruit();
+	selectedFruit.printCapture(); 
 	
      
     // Pick a random fruit from arraylist: fruitlist - 
