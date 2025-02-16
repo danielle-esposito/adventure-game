@@ -55,6 +55,7 @@ public class Main {
 	}
 
 	public static boolean Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList) throws IOException, InterruptedException { // core game sequence Written by: 
+		IterativePrint.clearScreen();
 		IterativePrint.printString("You got some debt to pay off, here's what you can do!"); // Begins with telling the user their balances
 		IterativePrint.printString("Current debt: " + player.debt);
 		IterativePrint.printString("Current money: " + player.money);
