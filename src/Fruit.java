@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 
 public class Fruit extends Item{
 	
-	public Fruit(String[] values) {
+	public static void Fruit(String[] values) {
         super(values);
 	}
 
@@ -21,7 +21,7 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
     public static void characterPlantTree() {
 	Scanner scanner = new Scanner(System.in); 
 	    
-    }   System.out.print("First, you need to plant a tree, but before you can do that, you'll need to answer a question...");
+        System.out.print("First, you need to plant a tree, but before you can do that, you'll need to answer a question...");
 	public static boolean plantTreeGame() {
         	Random random = new Random();
         	Scanner scanner = new Scanner(System.in);
@@ -44,19 +44,19 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
             return false;
         }
     }
-        boolean binarySolved = false; {
+        boolean binarySolved = false;
         while (binarySolved == false){
             binarySolved = plantTreeGame();
     }
 }
-    	IntStream.range(0 < 10)@forEach(i -> {
+    	IntStream.range(0, 10).forEach(i -> {
 		try {
 		    Thread.sleep(500);
 		} catch (InterruptedException e) {
 		    Thread.currentThread().interrupt();
     		}
 		System.out.print(".");
-	;
+	});
 	System.out.println("\nThe tree has fully grown now!");  
 
 	
@@ -94,8 +94,7 @@ public static void Game(ArrayList<Fruit> fruitList, Character player) {
         return fruitList.get(randomFruit);
  }
 	Fruit selectedFruit = selectFruit(fruitList);
-	selectedFruit.@printCapture;
-}
+	selectedFruit.printCapture;
 
-// Store the fruit you got into the inventory
+// Store the fruit you got into the inve
 	player.fruitInv.add(selectedFruit); 
