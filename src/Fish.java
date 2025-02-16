@@ -12,35 +12,27 @@ public class Fish extends Item {
     // section of code that handles execution of the game itself
     public static void Game(ArrayList<Fish> fishList, Character player) throws InterruptedException {
         IterativePrint.clearScreen();
-        //animateRiver.main();
-        //IterativePrint.printString("Welcome to the river!", true);
-        //IterativePrint.printString("There are plenty of fish to catch!", true);
-        //IterativePrint.printString("Ready to fish?");
-        //IterativePrint.printString("When ready, type 'cast' to cast your rod!");
-        //castAnimation.main();
-        //waitForFish.main();
+        
+        // animateRiver.main();
+        // IterativePrint.printString("Welcome to the river!", true);
+        // IterativePrint.printString("There are plenty of fish to catch!", true);
+        // IterativePrint.printString("Type 'cast' to cast your rod!");
+        // IterativePrint.printString("Type 'reel' to reel in your line! But be careful to not mistype!");
+        // IterativePrint.printString("Ready to fish? Type 'cast'!");
+        // castAnimation.main();
         Fish rewardFish = selectFish(fishList);
-        System.out.println(rewardFish.name + " " + rewardFish.bell_value + " " + rewardFish.size);
-        player.fishInv.add(rewardFish);
+        waitForFish.main(rewardFish);
+        System.out.println("You feel a fish tugging on the line!");
+        boolean catchStatus = reelFish.main(rewardFish);
+        if (catchStatus == true) {
+            System.out.println(rewardFish.ascii_art);
+            System.out.println("Congrats! You caught a " + rewardFish.name);
+            player.fishInv.addFirst(rewardFish);
+        } else if (catchStatus == false) {
+            System.out.println("Oh no! The fish got away!");
+        }
 
     }
-
-    // public static void animateBobber() throws InterruptedException {
-    //     String[] frames = {
-    //         "      ~~~~~~~~~~~~~~~\n      ~    O~~~     ~\n      ~~~~~~~~~~~~~~~",
-    //         "      ~~~~~~~~~~~~~~~\n      ~     O~~~    ~\n      ~~~~~~~~~~~~~~~",
-    //         "      ~~~~~~~~~~~~~~~\n      ~      O~~~   ~\n      ~~~~~~~~~~~~~~~"
-    //     };
-    //     for (int i = 0; i < 10; i++) {
-    //         IterativePrint.clearScreen();
-    //         System.out.println(frames[i % frames.length]);
-    //         try {
-    //             Thread.sleep(500); // 500ms delay
-    //         } catch (InterruptedException e) {
-    //             e.printStackTrace();
-    //         }
-    //     }
-    // }
 
     
 //method for selecting random fish from ArrayList
@@ -96,17 +88,18 @@ class animateRiver {
 
         while (running) {
             IterativePrint.clearScreen();
+            System.out.println("Enter to continue: ");
         for (String line : river) {
             System.out.println(shiftLine(modifyWave(line, random), shift));
         }
 
         shift += direction;
         if (shift >= 2 || shift <= -2) {
-            direction *= -1; // Change direction after shifting a few steps
+            direction *= -1;
         }
 
         try {
-            Thread.sleep(300); // Adjust speed of animation
+            Thread.sleep(300);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -116,7 +109,7 @@ class animateRiver {
         char[] chars = line.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == '~' && random.nextInt(10) > 7) {
-                chars[i] = (random.nextBoolean()) ? ' ' : '~'; // Occasionally remove or add waves
+                chars[i] = (random.nextBoolean()) ? ' ' : '~';
             }
         }
         return new String(chars);
@@ -135,7 +128,6 @@ class animateRiver {
 class castAnimation {
     //class for animating the casting of the fishing rod
     static String[] frames = {
-        // Rod Casting and Water Waves
         "   \n         | \n         | \n         | \n         | \n~~~~~~~~~~~~~~~\n~  ~~~ ~ ~~  ~  ~~~ ~ ~~~~ ~~",
         "   \n         |\\  \n         | \\ \n         |  \\ \n         |   \\ \n~~~~~~~~~~~~~~~\n ~~  ~  ~ ~~   ~ ~~~  ~~  ~  ~~ ~~",
         "   \n         |   \\ \n         |    \\ \n         |     \\ \n         |      \\ \n~~~~~~~~~~~~~~~\n  ~  ~  ~~ ~   ~ ~~~~ ~ ~~~  ~ ~ ~~",
@@ -155,11 +147,15 @@ class castAnimation {
                 IterativePrint.clearScreen();
                 System.out.println(frame);
                 try {
-                    Thread.sleep(300); // Adjust speed of casting animation
+                    Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
+        } else {
+            IterativePrint.clearScreen();
+            System.out.println("Type 'cast' to cast your rod!");
+            castAnimation.main();
         }
         input.close();
     }
@@ -184,9 +180,9 @@ class waitForFish {
         "   \n         |         \\ \n         |          \\ \n         |           \\ \n         |            \\~ ~~   ~ ~~~~ ~\n~~~~~~~~~~~~~~~ \n ~   ~   ~ ~   ~~  ~~ ~    ~ ~   ~"
     };
         
-    public static void main() throws InterruptedException {
-        int duration = 5;
-        long endTime = System.currentTimeMillis() + (duration * 1000);
+    public static void main(Fish fish) throws InterruptedException {
+        double duration = (fish.size * 1.5);
+        double endTime = System.currentTimeMillis() + (duration * 500);
 
 
         while (System.currentTimeMillis() < endTime) {
@@ -194,12 +190,52 @@ class waitForFish {
                 IterativePrint.clearScreen();
                 System.out.println(frame);
                 try {
-                    Thread.sleep(300); // Adjust speed of casting animation
+                    Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }
+    }
+}
+
+class reelFish {
+    public static boolean main(Fish fish) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+
+        double reelCountBound = fish.size * 1.5;
+        int reelCountBoundInt = (int) reelCountBound;
+
+        int reelCount = random.nextInt((reelCountBoundInt - fish.size) + 1) + fish.size;
+        boolean catchStatus = true;
+        
+        System.out.println("Now! Type 'reel' to reel in your line!!");
+        for(int i=0; i<=reelCount; i++) {
+            if (input.hasNextLine()){
+                String reel = input.nextLine();
+
+                if (reel.equals("reel") && (i < reelCount)) {
+                    System.out.println("Again!!");
+                    catchStatus=true;
+                } else if (reel.equals("reel") && (i == reelCount)){
+                    System.out.println("You caught the fish!");
+                    catchStatus = true;
+                    try {
+                        Thread.sleep(1500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    IterativePrint.clearScreen();
+                } else {
+                    System.out.println("It got away!");
+                    catchStatus = false;
+                    break;
+                }
+            }
+        }
+        input.close();
+        return catchStatus;
     }
 }
 

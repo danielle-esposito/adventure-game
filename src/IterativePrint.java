@@ -32,7 +32,7 @@ public class IterativePrint {
         // if bool=true, then the program prints out "Press Enter to continue" and waits for user input
         if (EnterToContinue == true) {
             try {
-                Thread.sleep(750);
+                Thread.sleep(50);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
