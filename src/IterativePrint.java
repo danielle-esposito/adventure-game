@@ -8,20 +8,21 @@ import java.util.Scanner;
 public class IterativePrint {
     public static void printString(String text){ // Standard method just prints iteratively
         for (char character : text.toCharArray()) { // takes the incoming string and turns it into an array of chars and loops through each one
-            System.out.print(character); // print each char
+            System.out.print(character); // print each char individually
             try {
-            Thread.sleep(50); // wait 50ms between printing each char 
+            Thread.sleep(40); // wait 40ms between printing each char 
             } catch (InterruptedException e) { // This is a catch for when using Thread.sleep
                 e.printStackTrace();
             }
         }
         System.out.println(); // new line
     }
+    // Overloaded method with boolean
     public static void printString(String text, boolean EnterToContinue) {
-        for (char character : text.toCharArray()) {
+        for (char character : text.toCharArray()) { // Same as standard method
             System.out.print(character);
             try {
-            Thread.sleep(50);
+            Thread.sleep(40);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -31,8 +32,8 @@ public class IterativePrint {
         
         // if bool=true, then the program prints out "Press Enter to continue" and waits for user input
         if (EnterToContinue == true) {
-            try {
-                Thread.sleep(50);
+            try { // Try catch around sleep to avoid errors
+                Thread.sleep(40);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -44,7 +45,7 @@ public class IterativePrint {
             input.nextLine();
         }
     }
-
+    // Method to clear the screen
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();

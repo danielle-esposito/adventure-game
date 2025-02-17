@@ -1,3 +1,6 @@
+// Written by Ezzah
+// Class for fruit minigame
+
 import java.util.Scanner; 
 import java.util.ArrayList;
 import java.util.Random;

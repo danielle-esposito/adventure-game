@@ -1,3 +1,6 @@
+// Written by Heather and Dani
+// Character class for the player
+
 import java.util.ArrayList;
 
 public class Character {

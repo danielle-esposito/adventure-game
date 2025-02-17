@@ -1,3 +1,6 @@
+// Written by Ludun and Alex
+// Class for visting the shop to sell Items
+
 import java.util.Scanner;
 import java.util.ArrayList;
 

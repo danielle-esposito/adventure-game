@@ -1,4 +1,5 @@
-// Written by alex and dani
+// Written by Ludun
+// Class for visiting Tom Nook's office
 
 public class Nook {
     public static boolean Office(Character player){ 

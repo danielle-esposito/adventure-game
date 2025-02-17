@@ -1,3 +1,6 @@
+// Written by Alex, Ludun and Heather
+// Main class that includes the Intro and Menu sequences
+
 import java.util.ArrayList;
 import java.io.IOException;
 import java.util.Scanner;
@@ -38,7 +41,7 @@ public class Main {
 		input.close();
 	}
 
-	public static void Intro(Character player, Scanner input){ // Written by:
+	public static void Intro(Character player, Scanner input){ // Written by:Ludun
 
 		IterativePrint.clearScreen(); //Introduction diolougue
 		IterativePrint.printString("Guide: Welcome! What's your name?");
@@ -56,7 +59,7 @@ public class Main {
 		IterativePrint.printString("Guide: To pay off your debt, you'll need to earn bells by selling items you collect throughout the island. Good luck, " + player.name + "!",true);
 
 	}
-
+	// Written by Heather and Alex
 	public static boolean Menu(Character player, boolean winCondition, ArrayList<Fish> fishList, ArrayList<Bug> bugList, ArrayList<Fruit> fruitList, Scanner input) throws IOException, InterruptedException { // core game sequence Written by: 
 		IterativePrint.clearScreen();
 		IterativePrint.printString("You got some debt to pay off, here's what you can do!"); // Begins with telling the user their balances

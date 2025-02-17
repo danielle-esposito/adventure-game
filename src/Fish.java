@@ -1,5 +1,6 @@
 // author: dani esposito
 // class for fish and for making/playing the minigame
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;

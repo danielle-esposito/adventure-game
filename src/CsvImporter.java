@@ -13,21 +13,22 @@ public class CsvImporter {
 		BufferedReader br = new BufferedReader(new FileReader(csvFile));
 		String line;
 		
-		String[] values;
+		String[] values; // String array for the values of each CSV Line to be stored into
 		values = new String[5];
 	
-		while ((line = br.readLine()) != null) {
-			values = line.split(",");
-			Fish item = new Fish(values);
-			list.add(item);
+		while ((line = br.readLine()) != null) { // Loop through the lines untill you get to the last line: Null
+			values = line.split(","); // split the string with the commas in the CSV
+			Fish item = new Fish(values); // Create fish Object with the values from the array
+			list.add(item); // Add it to the ArrayList that is returned
 		}
 		br.close();
 		
 		return list;
 	}
 
+	// Same sequence for each of the other object types:
+	// Import Bugs
 	public static ArrayList<Bug> ImportBugs(String csvFile, ArrayList<Bug> list) throws IOException{
-		//List<Bug> list = new ArrayList<>();
 		
 		BufferedReader br = new BufferedReader(new FileReader(csvFile));
 		String line;
@@ -45,6 +46,7 @@ public class CsvImporter {
 		return list;
 	}
 
+	// import Fruit
 	public static ArrayList<Fruit> ImportFruit(String csvFile, ArrayList<Fruit> list) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new FileReader(csvFile));

@@ -1,4 +1,4 @@
-// Author: Alex
+// Written by Alex
 // This is the main superclass refrenced by all the minigame classes Fish, Fruit, and Bug
 
 public class Item {
