@@ -10,11 +10,11 @@ public class Main {
 
 		// Import the Items involved in each of the minigames from their respective CSV Files
 		ArrayList<Fish> fishList = new ArrayList<>(); // creates empty arrayList for Fish(Item) objects to be stored
-		fishList = CsvImporter.ImportFish("resources/fish.csv",fishList); // sets this arraylist to to contain all of the fish objects imported form the CSV
+		fishList = CsvImporter.ImportFish("fish.csv",fishList); // sets this arraylist to to contain all of the fish objects imported form the CSV
 		ArrayList<Bug> bugList = new ArrayList<>();
-		bugList = CsvImporter.ImportBugs("resources/bug.csv",bugList);
+		bugList = CsvImporter.ImportBugs("bug.csv",bugList);
 		ArrayList<Fruit> fruitList = new ArrayList<>();
-		fruitList = CsvImporter.ImportFruit("resources/fruit.csv",fruitList);
+		fruitList = CsvImporter.ImportFruit("fruit.csv",fruitList);
 
 		//Print details for all of the Items (Debug)
 		//for (Fish fish : fishList) {
