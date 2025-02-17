@@ -12,15 +12,16 @@ public class Bug extends Item {
 
     public static void Game(ArrayList<Bug> bugList, Character player, Scanner input) throws InterruptedException, IOException {
         IterativePrint.clearScreen();
-        IterativePrint.printString("Welcome to the bugminigame!", true); // Introduce the game
+        IterativePrint.printString("Welcome to the bug mini game", true); // Introduce the game
         IterativePrint.printString("A bug is moving back and forth. Press [Enter] at the right moment to catch it!", true);
 
         Bug targetBug = selectBug(bugList); // Select the bug that is to be potentially catched
         boolean caught = attemptCatch(targetBug, input); // the user attempts to catch the bug
 
         if (caught) { // If it was caught inform user and add it to the player's inventory
-            IterativePrint.printString("You caught a " + targetBug.name + "!", true);
+            targetBug.printCapture();
             player.bugInv.add(targetBug);
+            IterativePrint.printString("",true);
         } else { // If it got away inform the user
             IterativePrint.printString("The bug escaped!", true);
         }
