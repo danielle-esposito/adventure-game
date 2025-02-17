@@ -33,8 +33,9 @@ public class Main {
 		boolean winCondition = false;
 
 		while(winCondition == false){ //Gameplay loop keeps occuring untill the game is won
-			Menu(player, winCondition, fishList, bugList, fruitList, input); // The game revolves around the menu which let's you choose what action's to take
+			winCondition = Menu(player, winCondition, fishList, bugList, fruitList, input); // The game revolves around the menu which let's you choose what action's to take
 		}
+		input.close();
 	}
 
 	public static void Intro(Character player, Scanner input){ // Written by:
@@ -78,7 +79,7 @@ public class Main {
 				Fish.Game(fishList, player, input); // Call Fish Game method to play minigame
 				break;
 			case "4":
-				Fruit.Game(fruitList, player); // Call Fruit Game method to play minigame
+				Fruit.Game(fruitList, player, input); // Call Fruit Game method to play minigame
 				break;
 			case "5":
 				Bug.Game(bugList, player, input); // Call Bug Game method to play minigame
