@@ -6,47 +6,44 @@ import java.io.IOException;
 
 public class Bug extends Item {
 
-    public Bug(String[] values) {
+    public Bug(String[] values) { // Inherit attributes / constructor from the Item superclass
         super(values);
     }
 
     public static void Game(ArrayList<Bug> bugList, Character player, Scanner input) throws InterruptedException, IOException {
         IterativePrint.clearScreen();
-        IterativePrint.printString("Welcome to the bug-catching minigame!", true);
+        IterativePrint.printString("Welcome to the bugminigame!", true); // Introduce the game
         IterativePrint.printString("A bug is moving back and forth. Press [Enter] at the right moment to catch it!", true);
 
-        Bug targetBug = selectBug(bugList);
-        boolean caught = attemptCatch(targetBug, input);
+        Bug targetBug = selectBug(bugList); // Select the bug that is to be potentially catched
+        boolean caught = attemptCatch(targetBug, input); // the user attempts to catch the bug
 
-        if (caught) {
+        if (caught) { // If it was caught inform user and add it to the player's inventory
             IterativePrint.printString("You caught a " + targetBug.name + "!", true);
             player.bugInv.add(targetBug);
-        } else {
+        } else { // If it got away inform the user
             IterativePrint.printString("The bug escaped!", true);
         }
     }
 
     private static Bug selectBug(ArrayList<Bug> bugList) {
         Random random = new Random();
-        return bugList.get(random.nextInt(bugList.size())); // Randomly selects a bug
+        return bugList.get(random.nextInt(bugList.size())); // Randomly selects a bug from the bugList
     }
 
     private static boolean attemptCatch(Bug bug, Scanner input) throws InterruptedException, IOException {
-        Random random = new Random();
         int bugPosition = 0;
         int direction = 1;
         int maxPosition = 10;
         
-        IterativePrint.printString("Press [Enter] when the bug reaches the center (5).", true);
-        
-        for (int i = 0; i < 15; i++) { // Bug moves back and forth for 15 frames
-            IterativePrint.clearScreen();
-            printBugPosition(bugPosition, maxPosition);
-            Thread.sleep(300 - (bug.size * 30)); // Faster for rarer bugs
+        for (int i = 0; i < 30; i++) { // bug moves back and forth 2 whole rotations to allow the user to catch before it goes away
+            IterativePrint.clearScreen(); // clearing the screen before each frame
+            printBugPosition(bugPosition, maxPosition); // printing the frame
+            Thread.sleep(300 - (bug.size * 35)); // the movement is faster depending on the size of the bug
             
             bugPosition += direction;
-            if (bugPosition == 0 || bugPosition == maxPosition) {
-                direction *= -1; // Reverse direction
+            if (bugPosition == 0 || bugPosition == maxPosition) { // turn the bug around at the max position
+                direction *= -1;
             }
 
             if (System.in.available() > 0) {
@@ -58,16 +55,16 @@ public class Bug extends Item {
     }
 
     private static void printBugPosition(int pos, int max) {
-        StringBuilder line = new StringBuilder(" ");
+        StringBuilder sb = new StringBuilder(" "); // Use of string builder class to format frame for final print, a little easier than just making a char array 
         for (int i = 0; i <= max; i++) {
             if (i == pos) {
-                line.append("B");
+                sb.append("B"); // Bug position represented with a B
             } else if (i == 5) {
-                line.append("|"); // Net position
+                sb.append("|"); // Center position (net)
             } else {
-                line.append("-");
+                sb.append("-");
             }
         }
-        System.out.println(line.toString());
+        System.out.println(sb.toString());
     }
 }
